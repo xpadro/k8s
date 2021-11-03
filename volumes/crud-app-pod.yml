@@ -1,19 +1,26 @@
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: crud-app
+  name: crud-app-deploy
 spec:
-  containers:
-    - image: xpadro/k8s-crud-app
-      name: crud-app-container
-      resources:
-        requests:
-          memory: "512Mi"
-          cpu: "500m"
-        limits:
-          memory: "512Mi"
-          cpu: "500m"
-      ports:
-        - containerPort: 8080
-          name: http
-          protocol: TCP
+  selector:
+    matchLabels:
+      app: crud-app
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: crud-app
+    spec:
+      containers:
+      - name: crud-app-container
+        image: xpadro/k8s-crud-app
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "500m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
