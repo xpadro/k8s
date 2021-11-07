@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mongodb
+  name: mongodb-emptydir-deploy
 spec:
   replicas: 1
   selector:
@@ -19,10 +19,9 @@ spec:
         - containerPort: 27017
         # Where the volume is mounted in the container
         volumeMounts:
-        - name: mongodb-pvc
+        - name: mongodb-emptydir
           mountPath: /data/db
       # Which volume will be used by this pod
       volumes:
-      - name: mongodb-pvc
-        persistentVolumeClaim:
-          claimName: mongodb-claim
+      - name: mongodb-emptydir
+        emptyDir: {}
