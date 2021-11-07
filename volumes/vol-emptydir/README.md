@@ -47,4 +47,4 @@ curl -X POST localhost:8080/countries -H 'Content-Type: application/json' -d '{"
 curl localhost:8080/countries
 ```
 
-As soon as the pod is destroyed, data will be lost.
+As soon as the mongodb pod is destroyed, data will be lost.
