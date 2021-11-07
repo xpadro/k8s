@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test
+spec:
+  containers:
+  - name: test
+    image: alpine:3.2
+    command:
+      - /bin/sh
+      - "-c"
+      - "sleep 60m"
+    imagePullPolicy: IfNotPresent
+    volumeMounts:
+    - mountPath: /pod-dir
+      name: test-volume
+  volumes:
+  - name: test-volume
+    hostPath:
+      # Path on the host machine
+      path: /home/docker
