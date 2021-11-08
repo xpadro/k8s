@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: volume-config-map
+  namespace: default
+data:
+  entry_a: a_content
+  entry_b: b_content
