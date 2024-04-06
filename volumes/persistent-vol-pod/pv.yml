@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: host-pv
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 2Gi
+  accessModes:
+    - ReadWriteOnce # Read-Write by single node
+  hostPath:
+    # Path on the host machine. In Prod you would use AWS EBS or other network storage
+    path: /home/docker
