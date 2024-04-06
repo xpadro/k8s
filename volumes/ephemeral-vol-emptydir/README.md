@@ -1,4 +1,4 @@
-An application (crud-app) which accesses a MongoDB deployment with a volume mounted for containing the data. The application is deployed using a deployment and specifying 1 replica.
+An application (crud-app) accessingwhich accesses a MongoDB deployment with a volume mounted for containing the data. The application is deployed using a deployment and specifying 1 replica.
 
 The volume is of emptyDir type, which means that it will exist only as long as the Pod exists.
 

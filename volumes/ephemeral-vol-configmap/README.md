@@ -1,4 +1,4 @@
-A pod with injected data from a ConfigMap. The data is accessed from within the pod as a read-only volume.
+A pod with an ephemeral read-only volume. The data in the volume is injected from a ConfigMap.
 
 
 ## Setup
@@ -22,7 +22,7 @@ Connect to the pod:
 kubectl exec -it test -- sh
 ```
 
-In the container, the volume is mounted in `pod-dir`:
+In the container, the volume is mounted in `pod-dir` directory:
 
 ```
 / # cd pod-dir/
