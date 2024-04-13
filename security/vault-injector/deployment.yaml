@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: demo-app
+   labels:
+      app: demo-app
+   
+spec:
+   selector:
+      matchLabels:
+         app: demo-app
+   replicas: 1
+   template:
+      metadata:
+         annotations:
+            vault.hashicorp.com/agent-inject: 'true'
+            vault.hashicorp.com/role: 'internal-app'
+            vault.hashicorp.com/agent-inject-secret-database-config.txt: 'demo-vault/data/demo-secrets/demo-user'
+         labels:
+            app: demo-app
+      spec:
+         serviceAccountName: internal-app
+         containers:
+         - name: demo-app
+           image: alpine:3.2
+           command:
+            - /bin/sh
+            - "-c"
+            - "sleep 60m"
