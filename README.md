@@ -1,4 +1,6 @@
-# k8s
-k8s examples
+# Systems
+Playground repository used to experiment with deploying different distributed systems. Current sections:
 
-README.md in each specific example directory
+- k8s-concepts: Goes through different aspects of Kubernetes like volumes, security or network.
+
+README.md in each specific directory
