@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: opentel-app-b
+
+server:
+  port: 8084
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+  otlp:
+    tracing:
+      endpoint: http://localhost:4318/v1/traces
+  endpoints:
+    web:
+      exposure:
+        include: "*"
