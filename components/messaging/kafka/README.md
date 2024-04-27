@@ -190,3 +190,21 @@ If you open the logs on the application's Pod, you should see the following:
 2024-04-27T14:14:37.627Z  INFO 7 --- [nio-8080-exec-4] com.xpadro.kafka.AppController           : Sending message
 2024-04-27T14:14:37.635Z  INFO 7 --- [ntainer#0-0-C-1] com.xpadro.kafka.Consumer                : Message received: test message
 ```
+
+
+## Clean up
+Stop using Minikube host for Docker:
+
+```
+eval $(minikube docker-env -u).
+```
+
+Remove the entry you added to `/etc/hosts`
+
+Remove the deployment:
+
+```
+kubectl delete -f ./deployment/app-deployment.yaml
+kubectl delete -f ./deployment/ingress.yaml
+
+```
