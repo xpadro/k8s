@@ -16,7 +16,7 @@ spec:
         image: xpadro/spring-boot-kafka:latest
         imagePullPolicy: Never
         ports:
-        - containerPort: 9001
+        - containerPort: 8080
 
 ---
 apiVersion: v1
@@ -30,4 +30,4 @@ spec:
   ports:
   - protocol: TCP
     port: 9001
-    targetPort: 9001
+    targetPort: 8080
