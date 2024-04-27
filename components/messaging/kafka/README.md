@@ -196,7 +196,7 @@ If you open the logs on the application's Pod, you should see the following:
 Stop using Minikube host for Docker:
 
 ```
-eval $(minikube docker-env -u).
+eval $(minikube docker-env -u)
 ```
 
 Remove the entry you added to `/etc/hosts`
