@@ -33,9 +33,9 @@ kafka-topics --bootstrap-server localhost:9092 --list
 ### Deploy the application
 First, let's build the application:
 
-´´´
+```
 mvnw clean install
-´´´
+```
 
 In order to deploy the application in the local minikube cluster, we need to generate its image. However, instead of publishing the image into a registry like DockerHub, we can directly push the image into the local cluster.
 
