@@ -1,6 +1,6 @@
 
 # Local Publishing (Docker Desktop)
-This example shows how to run an application in k8s without publishing the image to a public Docker registry. The image is published into a local registry.
+This example shows how to run an application in a local k8s cluster on Docker Desktop without publishing the image to a public Docker registry.
 
 ## Build the image
 Build the application:
