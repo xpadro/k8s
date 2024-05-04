@@ -14,6 +14,9 @@ I'm running the k8s cluster on minikube, so the pod will have visibility over mi
 minikube ssh -- sudo mkdir /home/postgres
 ```
 
+If you are running on Docker Desktop, it should be enough to create the path in your host system.
+
+
 ## Deployment
 Execute the following command to deploy Postgres:
 
